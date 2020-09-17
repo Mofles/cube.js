@@ -1,7 +1,6 @@
 const Joi = require('@hapi/joi');
 const DriverDependencies = require('./DriverDependencies');
 
-
 const schemaQueueOptions = Joi.object().keys({
   concurrency: Joi.number().min(1).integer(),
   continueWaitTimeout: Joi.number().min(0).integer(),
@@ -60,7 +59,6 @@ const schemaOptions = Joi.object().keys({
   }),
   allowJsDuplicatePropsInSchema: Joi.boolean()
 });
-
 
 module.exports = (options) => {
   const { error } = Joi.validate(options, schemaOptions, { abortEarly: false });

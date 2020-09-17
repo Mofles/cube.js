@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "lint": "eslint core/**/*.js",
+    "lint:fix": "eslint --fix core/**/*.js",
     "test": "npm run test:unit",
     "test:unit": "jest ./**/*.test.js"
   },

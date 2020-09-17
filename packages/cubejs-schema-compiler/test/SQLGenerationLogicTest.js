@@ -315,7 +315,6 @@ describe('SQL Generation', function test() {
     });
     `);
 
-    
   it('filter with operator OR', () => {
     const result = compiler.compile().then(() => {
       const query = new PostgresQuery({ joinGraph, cubeEvaluator, compiler }, {
@@ -346,7 +345,6 @@ describe('SQL Generation', function test() {
 
     return result;
   });
- 
 
   it('having and where filter in same operator OR', () => compiler.compile().then(() => {
     try {
@@ -381,14 +379,14 @@ describe('SQL Generation', function test() {
           'visitors.source'
         ]
       });
-  
+
       throw new Error();
     } catch (error) {
       // You cannot use dimension and measure in same condition
       error.should.be.instanceof(UserError);
     }
   }));
-  
+
   it('having filter with operator OR', () => compiler.compile().then(() => {
     const query = new PostgresQuery({ joinGraph, cubeEvaluator, compiler }, {
       measures: [
@@ -439,7 +437,6 @@ describe('SQL Generation', function test() {
       );
     });
   }));
-
 
   it('having filter with operators OR & AND', () => compiler.compile().then(() => {
     const query = new PostgresQuery({ joinGraph, cubeEvaluator, compiler }, {
